@@ -1,6 +1,7 @@
 package com.tnt.audiorecorder;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.AudioFormat;
 import android.media.AudioManager;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mStop ;
     private Button mQuite ;
 
+    private Button mTest ;
+
     private AudioRecord  mAudioRecorder ;
 
     private Thread mRecordingThread ;
@@ -50,11 +53,15 @@ public class MainActivity extends AppCompatActivity {
         mStop = findViewById(R.id.stop_record) ;
         mQuite = findViewById(R.id.exit) ;
 
+        mTest = findViewById(R.id.test) ;
+
         ViewClickListener listener = new ViewClickListener() ;
         //initAudioRecorder() ;
         mStart.setOnClickListener(listener);
         mStop.setOnClickListener(listener);
         mQuite.setOnClickListener(listener);
+
+        mTest.setOnClickListener(listener);
 
         checkRecordPermission() ;
 
@@ -221,6 +228,10 @@ public class MainActivity extends AppCompatActivity {
             }else if (v.getId() == R.id.exit) {
                 stopRecording();
                 finish();
+            }else if (v.getId()==R.id.test) {
+                Intent intent = new Intent(MainActivity.this,DhcpActivity.class) ;
+                startActivity(intent) ;
+
             }
 
         }

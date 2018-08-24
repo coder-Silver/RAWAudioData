@@ -49,5 +49,16 @@
         android:text="@string/btn_exit"
         />
 
+    <Button
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/test_dhcp"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="28sp"
+        />
+
 
 </FrameLayout>
