@@ -205,6 +205,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void openZMP6() {
+        AudioManager am = (AudioManager) getApplicationContext().getSystemService(AUDIO_SERVICE);
+        if (am != null) {
+            Log.i("test", "设置双MIC录音 AudioManager.setParameters(\"MIC_TEST=1\");");
+            am.setParameters("MIC_TEST=1");
+        }
+    }
+
+    private void closeZMP6() {
+        AudioManager am = (AudioManager) getApplicationContext().getSystemService(AUDIO_SERVICE);
+        if (am != null) {
+            Log.i("test", "退出双MIC录音 AudioManager.setParameters(\"MIC_TEST=0\");");
+            am.setParameters("MIC_TEST=0");
+        }
+    }
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -219,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             if (v.getId() == R.id.start_record) {
                 Log.i("test","start record") ;
+                openZMP6() ;
                 startRecording() ;
                 enableButtons(true) ;
             }else if (v.getId() == R.id.stop_record) {
@@ -227,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
                 enableButtons(false) ;
             }else if (v.getId() == R.id.exit) {
                 stopRecording();
+                closeZMP6();
                 finish();
             }else if (v.getId()==R.id.test) {
                 Intent intent = new Intent(MainActivity.this,DhcpActivity.class) ;
