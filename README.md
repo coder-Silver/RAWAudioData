@@ -8,7 +8,7 @@ usage:
 tinycap file.wav [-D card] [-d device] [-c channels] [-r rate] [-b bits] [-p period_size] [-n n_periods]
 
 
-！[image](https://github.com/HelloWorld1024/RAWAudioData/edit/master/audioRecorderPcmData.png)
+![image](https://github.com/HelloWorld1024/RAWAudioData/edit/master/audioRecorderPcmData.png)
 
 audiorecord 录音频谱数据
 
