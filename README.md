@@ -14,3 +14,5 @@ audiorecord 录音频谱数据
 
 
 ![image](https://github.com/HelloWorld1024/RAWAudioData/edit/master/tinycapData.png)
+
+tinycap 录音频谱数据
